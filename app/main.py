@@ -10,11 +10,11 @@ class Vector:
         self.y_c = round(y_c, 2)
 
     @property
-    def x(self):
+    def x(self) -> float:
         return self.x_c
 
     @property
-    def y(self):
+    def y(self) -> float:
         return self.y_c
 
     def __add__(self, other: "Vector") -> "Vector":
@@ -31,8 +31,8 @@ class Vector:
             return (self.x_c * other.x_c) + (self.y_c * other.y_c)
 
     @classmethod
-    def create_vector_by_two_points(cls, stat: tuple, en: tuple) -> "Vector":
-        return cls(en[0] - stat[0], en[1] - stat[1])
+    def create_vector_by_two_points(cls, start: tuple, end: tuple) -> "Vector":
+        return cls(end[0] - start[0], end[1] - start[1])
 
     def get_length(self) -> float:
         return sqrt(pow(self.x_c, 2) + pow(self.y_c, 2))
